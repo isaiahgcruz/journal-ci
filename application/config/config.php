@@ -22,7 +22,7 @@ function get_base_url()
 }
 
 //$config['base_url'] = get_base_url();
-$config['base_url'] = 'http://localhost/ci/';
+$config['base_url'] = 'http://localhost/ci';
 /*
 |--------------------------------------------------------------------------
 | Index File
