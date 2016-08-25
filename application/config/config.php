@@ -21,8 +21,8 @@ function get_base_url()
     return $base[0];
 }
 
-$config['base_url'] = get_base_url();
-
+//$config['base_url'] = get_base_url();
+$config['base_url'] = 'http://localhost/ci/';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -33,7 +33,7 @@ $config['base_url'] = get_base_url();
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

@@ -199,6 +199,8 @@ if (defined('ENVIRONMENT'))
  * And away we go...
  *
  */
+include_once 'vendor/autoload.php';
+
 require_once BASEPATH.'core/CodeIgniter.php';
 
 /* End of file index.php */
