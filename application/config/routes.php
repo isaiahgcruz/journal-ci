@@ -46,11 +46,15 @@ $route['seed'] = 'seeder/seed';
 
 $route['user'] = 'user/index';
 $route['user/(:num)'] = 'user/show/$1';
-$route['user/(:num)/posts'] = 'user/show_posts/$1';
+$route['user/(:num)/post'] = 'user/show_posts/$1';
 
 $route['login'] = 'page/login';
 $route['dologin'] = 'user/login';
 
+$route['home'] = 'dashboard';
+$route['logout'] = 'page/logout';
+
+$route['post/(:num)'] = "post/index/$1";
 
 
 /* End of file routes.php */

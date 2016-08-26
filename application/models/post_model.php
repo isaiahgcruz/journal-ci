@@ -19,6 +19,26 @@ class Post_model extends CI_Model {
 		$this->db->insert('posts', $data);
 	}
 
+	function get_all_posts()
+	{	
+		$query = $this->db->order_by('posts.created_at')
+			->join('users', 'posts.user_id = users.id')
+			->get('posts');
+		return $query->result();
+	}
 
+	
+
+	function get_posts_paginated($page, $count)
+	{	
+		$page = (int) $page;
+		$count = (int) $count;
+		$query = $this->db->order_by('posts.id')
+			->select(['posts.id', 'users.first_name', 'users.last_name', 'posts.title', 'posts.content'])
+			->limit($count)
+			->offset(($page-1)*$count)
+			->join('users', 'posts.user_id = users.id');
+		return ['results' => $query->get('posts')->result(), 'count' => $query->count_all_results('posts')];
+	}
 
 }
