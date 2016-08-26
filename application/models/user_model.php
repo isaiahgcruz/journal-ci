@@ -44,8 +44,10 @@ class User_model extends CI_Model {
 	{
 		$this->db->where('username', $username);
 		$this->db->where('password', md5($password));
+		$this->db->select(['first_name', 'last_name', 'username']);
+		$data = $this->db->get('users')->first_row();
 		if ($this->db->get('users')->num_rows()) {
-			return true;
+			return $data;
 		} else {
 			return false;
 		}

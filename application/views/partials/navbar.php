@@ -27,7 +27,11 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                    <li><a href="#">Login</a></li>
+                <?php if ($this->session->userdata('user_data')) { ?>
+                    <li><a href="/ci/logout">Logout</a></li>
+                <?php } else { ?>
+                    <li><a href="/ci/login">Login</a></li>
+                <?php } ?>
             </ul>
         </div>
     </div>
