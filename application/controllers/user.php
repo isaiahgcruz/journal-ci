@@ -16,7 +16,9 @@ class User extends CI_Controller
 
 	function index()
 	{
-		var_dump($this->user->get_all_users());
+		$data['title'] = 'Test';
+		$this->load->view('partials/header', $data);
+		$this->load->view('partials/footer');
 	}
 
 	function show($id)

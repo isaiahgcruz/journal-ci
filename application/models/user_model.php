@@ -40,4 +40,15 @@ class User_model extends CI_Model {
 		return $this->db->get('posts')->result();
 	}
 
+	function validate_user($username, $password)
+	{
+		$this->db->where('username', $username);
+		$this->db->where('password', md5($password));
+		if ($this->db->get('users')->num_rows()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

@@ -48,6 +48,8 @@ $route['user'] = 'user/index';
 $route['user/(:num)'] = 'user/show/$1';
 $route['user/(:num)/posts'] = 'user/show_posts/$1';
 
+$route['login'] = 'page/login';
+$route['dologin'] = 'user/login';
 
 
 

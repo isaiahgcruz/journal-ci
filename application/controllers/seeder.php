@@ -29,12 +29,22 @@ class Seeder extends CI_Controller {
 
 	function _truncate_db()
 	{
-		$this->db->truncate('posts','users');
+		$this->db->query('truncate table "users", "posts";');
 	}
 
 	function _seed_users($limit)
 	{
 		echo "Seeding $limit users";
+
+		$data = [
+			'username' => 'superadmin',
+			'password' => md5('superadmin'),
+			'first_name' => 'SuperAdmin',
+			'last_name' => 'SUPERADMIN',
+			'created_at' => date('Y-m-d H:i:s'),
+			'updated_at' => date('Y-m-d H:i:s')
+		];
+		$this->user->insert($data);
 
 		for ($i = 0; $i < $limit; $i++) {
 			echo '.';
@@ -43,7 +53,7 @@ class Seeder extends CI_Controller {
 			$username = strtolower($first_name[0]) . strtolower($last_name) . rand(0, 1000);
 			$data = [
 				'username' => $username,
-				'password' => 'password',
+				'password' => md5('password'),
 				'first_name' => $first_name,
 				'last_name' => $last_name,
 				'created_at' => date('Y-m-d H:i:s'),
