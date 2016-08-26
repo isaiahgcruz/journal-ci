@@ -26,7 +26,8 @@ class Migration_Add_posts_table extends CI_Migration {
 					'type' => 'DateTime'
 				],
 				'updated_at' => [
-					'type' => 'DateTime'
+					'type' => 'DateTime',
+					'null' => TRUE
 				],
 				'CONSTRAINT users_fid FOREIGN KEY(user_id) REFERENCES users(id) ON DELETE CASCADE'
 			]);

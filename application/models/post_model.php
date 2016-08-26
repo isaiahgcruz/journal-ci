@@ -19,6 +19,11 @@ class Post_model extends CI_Model {
 		$this->db->insert('posts', $data);
 	}
 
+	function update($postId, $data)
+	{
+		$this->db->where('id',$postId)->update($data);
+	}
+
 	function get_all_posts()
 	{	
 		$query = $this->db->order_by('posts.created_at')
@@ -33,7 +38,7 @@ class Post_model extends CI_Model {
 	{	
 		$page = (int) $page;
 		$count = (int) $count;
-		$query = $this->db->order_by('posts.id')
+		$query = $this->db->order_by('posts.created_at', 'DESC')->order_by('posts.id', 'DESC')
 			->select(['posts.id', 'users.first_name', 'users.last_name', 'posts.title', 'posts.content'])
 			->limit($count)
 			->offset(($page-1)*$count)

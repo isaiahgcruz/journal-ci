@@ -1,4 +1,11 @@
+<?php include('add_post_modal.php') ?>
+
 <div class="col-md-12">
+	<div style="margin-bottom: 20px">
+		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#add-post-modal">
+		  Add Post
+		</button>
+	</div>
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<div class="panel-title">

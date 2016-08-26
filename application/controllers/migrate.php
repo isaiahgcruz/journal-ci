@@ -10,11 +10,12 @@ class Migrate extends CI_Controller {
             exit('Direct access is not allowed');
         }
 
+        $this->session->sess_destroy();
+
     }
  
 	public function index()
 	{
-
 		$this->load->library('migration');
 
 		if ( ! $this->migration->latest()) {
