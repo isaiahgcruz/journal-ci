@@ -11,3 +11,5 @@ application/logs/*
 
 vendor/*
 node_modules/*
+public/*
+public/build/*

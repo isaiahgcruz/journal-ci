@@ -9,4 +9,5 @@
 			You are now logged in lolz
 		</div>
 	</div>
+	<user></user>
 </div>
