@@ -1,5 +1,4 @@
     </div>
-    <?= js_asset('jquery-3.1.0.slim.min.js') ?>
-    <?= js_asset('bootstrap.min.js') ?>
+    <script type="text/javascript" src="public/build/app.js"></script>
   </body>
 </html>

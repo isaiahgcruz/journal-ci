@@ -3,7 +3,7 @@
 function asset_url($asset_name, $asset_type = NULL) {
     $obj = & get_instance();
     $base_url = $obj->config->item('base_url');
-    $asset_root = '/assets/';
+    $asset_root = '/public/';
     $asset_location = $base_url . $asset_root;
 	if (is_array($asset_name))
 	{
